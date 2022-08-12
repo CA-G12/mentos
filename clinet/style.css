@@ -38,6 +38,7 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
+  background-image: url(./images/mentos\ BK.png);
 }
 header {
   text-align: center;
@@ -153,4 +154,27 @@ footer {
   color: rgb(190, 190, 190);
   font-size: 10px;
   font-weight: 500;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.optionsContainer {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  z-index: 5;
+}
+
+.optionsContainer h3 {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  text-align: start;
+  cursor: pointer;
+}
+
+.optionsContainer h3:hover {
+  background-color: goldenrod;
+  color: var(--background);
 }
