@@ -7,7 +7,7 @@ searchInput.addEventListener('keyup', () => {
     fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6d16c97231f4eadcb5ba5ab27aa3338d', createCard)
 
   } else {
-    fetch('../movies-names.json?q=' + searchInput.value, (data) => console.log(data))
+    fetch('../movies-names.json?q=' + searchInput.value, createOptions)
     let editTitle = searchInput.value.toLowerCase().split(' ').map(e => e[0].toUpperCase() + e.slice(1)).join('+')
     fetch('https://api.themoviedb.org/3/search/movie?api_key=6d16c97231f4eadcb5ba5ab27aa3338d&query=' + editTitle, createCard)
 
@@ -38,8 +38,30 @@ function createCard(data) {
     const des = document.createElement('p')
     des.textContent = e.overview
     info.appendChild(des)
-
-
-
   });
 }
+
+
+function createOptions(data) {
+  const optionsContainer = document.querySelector('.optionsContainer');
+  optionsContainer.textContent = '';
+
+  data.forEach(e => {
+    const option = document.createElement('h3');
+    optionsContainer.appendChild(option);
+    option.textContent = e.name;
+
+
+    option.addEventListener('click', () => {
+      optionsContainer.textContent = '';
+      let editTitle = e.name.toLowerCase().split(' ').map(e => e[0].toUpperCase() + e.slice(1)).join('+')
+      fetch('https://api.themoviedb.org/3/search/movie?api_key=6d16c97231f4eadcb5ba5ab27aa3338d&query=' + editTitle, createCard)
+    })
+  })
+
+  const body = document.querySelector('body');
+  body.addEventListener('click', () => {
+    optionsContainer.textContent = '';
+  })
+}
+
