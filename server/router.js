@@ -1,6 +1,7 @@
 const home = require("./handling/home");
 const public = require("./handling/public");
 const autocomplete = require("./handling/autocomplete");
+const error = require("./handling/error");
 
 function router(req, res) {
     let endpoint = req.url;
@@ -11,6 +12,8 @@ function router(req, res) {
         public(res, endpoint);
     } else if (endpoint.includes('/movies-names.json')) {
         autocomplete(res, endpoint);
+    }else{
+error(res)
     }
 }
 
