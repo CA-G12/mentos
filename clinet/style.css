@@ -8,10 +8,10 @@
 }
 
 :root {
-  --black: #1B1A17;
-  --gold: #F0A500;
-  --gray: #F4F4F4;
-  --sugar: #E6D5B8;
+  --black: #1b1a17;
+  --gold: #f0a500;
+  --gray: #f4f4f4;
+  --sugar: #e6d5b8;
 }
 
 ::-webkit-scrollbar {
@@ -40,18 +40,36 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  background-image: url(./images/mentos.png);
+  background-image: url(./images/mentosBG.png);
 }
 
 header {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 40px;
+  width: 400px;
 }
 
-header h1 {
-  font-size: 75px;
-  margin-top: 30px;
-  color: var(--gold);
+header a {
+  width: 100%;
+  margin-bottom: 500px;
+}
+
+header a img {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 6px 0;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  padding: 5px;
+  color: rgb(190, 190, 190);
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .cards {
@@ -115,10 +133,10 @@ header h1 {
   padding: 10px 5px;
   border: 0.5px solid var(--gold);
   border-radius: 5px;
-
 }
 
-.card:hover {}
+.card:hover {
+}
 
 img {
   width: 100%;
@@ -166,19 +184,6 @@ footer {
   border-image-slice: 1;
   /* border-width: 2px; */
   font-weight: 100;
-}
-
-.searchInput {
-  width: 100%;
-  padding: 5px 0;
-  outline: none;
-}
-
-.searchInput::placeholder {
-  padding: 5px;
-  color: rgb(190, 190, 190);
-  font-size: 10px;
-  font-weight: 500;
 }
 
 .searchContainer {
