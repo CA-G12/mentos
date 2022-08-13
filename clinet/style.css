@@ -112,6 +112,7 @@ header a img {
   margin-top: 15px;
   font-weight: 200;
   line-height: 18px;
+  overflow: auto;
 }
 
 .info h3 {
